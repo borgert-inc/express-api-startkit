@@ -1,18 +1,12 @@
 
 const winston = require('winston')
-require('winston-daily-rotate-file')
 
-let transport = new(winston.transports.DailyRotateFile)({
-    filename: __basedir + '/logs/%DATE%.log',
-    datePattern: 'YYYY-MM-DD',
-    zippedArchive: false,
-    maxSize: '20m',
-    maxFiles: '14d'
-})
-
-const logger = new(winston.createLogger)({
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
     transports: [
-        transport
+        new winston.transports.File({ filename: __basedir + '/logs/error.log', level: 'error' }),
+        new winston.transports.File({ filename: __basedir + '/logs/combined.log' })
     ]
 })
 

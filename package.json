@@ -35,8 +35,7 @@
     "mongoose-validator": "^2.0.2",
     "stylus": "0.54.5",
     "twig": "~0.10.3",
-    "winston": "^3.0.0-rc5",
-    "winston-daily-rotate-file": "^3.2.0"
+    "winston": "^3.0.0-rc5"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
