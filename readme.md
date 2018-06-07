@@ -6,6 +6,9 @@
 #### Install
 > npm install
 
+#### ENV
+> cp .env-example .env
+
 #### Development (With nodemon watch .js and .twig)
 > npm run dev
 > http://localhost:3000
