@@ -1,0 +1,36 @@
+
+{% if messages.info %}
+    <div class="alert-info">
+        <h4>Info</h4>
+        {% for item in messages.info %}
+            &bull; {{ item }} <br>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if messages.warning %}
+    <div class="alert-warning">
+        <h4>Atenção</h4>
+        {% for item in messages.warning %}
+            &bull; {{ item }} <br>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if messages.success %}
+    <div class="alert-success">
+        <h4>Parabéns</h4>
+        {% for item in messages.success %}
+            &bull; {{ item }} <br>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if messages.error %}
+    <div class="alert-error">
+        <h4>Atenção</h4>
+        {% for item in messages.error %}
+            &bull; {{ item }} <br>
+        {% endfor %}
+    </div>
+{% endif %}
