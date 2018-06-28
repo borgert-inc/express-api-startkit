@@ -3,10 +3,13 @@
 # Boilerplate Node Express 
 
 
-#### Install
+#### Nodemon
+> npm install -g nodemon
+
+#### Install packages
 > npm install
 
-#### ENV
+#### Copy .ENV
 > cp .env-example .env
 
 #### Configure .env
@@ -23,20 +26,30 @@
 > npm run eslint
 
 #### Packages
-- View engine: twig
-- Security: helmet
-- Flash: express-flash
-- Session: express-session
-- Encrypt: bcryptjs
-- Modules: express-load
-- Database: MongoDB
-    - ORM: Mongoose
-    - Mongoose Paginate
-    - Mongoose Validator
-- Logs: winston + winston-daily-rotate-file
-- Nodemon
-- CSS: stylus
-- Eslint + Husky
+
+| Package                   | Description                                                |
+| :------------------------- | :---------------------------------------------------------- | 
+| bcryptjs                  | Encrypt password  |
+| body-parser               | Parser body express    |
+| connect-mongo             | Mongo connect for express-session    |
+| debug                     | For Debug    |
+| dotenv-extended           | To work files .env    |
+| eslint                    | Code standard    |
+| express                   | Framework express    |
+| express-flash             | Control flash messages    |
+| express-load              | For load modules    |
+| express-session           | To work with session    |
+| helmet                    | For safety     |
+| http-errors               | Controllers http errors     |
+| husky                     | Work pre commits     |
+| method-override           | Overrise methods in express     |
+| moment                    | To work with dates     |
+| mongoose                  | ODM for database MongoDB    |
+| mongoose-paginate         | Paginate for mongoose    |
+| mongoose-validator        | Validator inputs for mongoose    |
+| stylus                    | Styleshet     |
+| twig                      | Engine for views    |
+| winston                   | Logs generator    |
 
 ## Support on Beerpay
 Hey dude! Help me out for a couple of :beers:!
