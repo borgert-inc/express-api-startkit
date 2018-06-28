@@ -26,16 +26,6 @@ const app = express()
 
 // ---------------------------------------------------------------------------------------
 
-// Mongoose 
-const MongoStore = require('connect-mongo')(session)
-
-mongoose.connect(process.env.MONGO_DB)
-mongoose.connection.on('open', () => {
-    console.log('A new connection has been pluged')
-})
-
-// ---------------------------------------------------------------------------------------
-
 // View engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'twig')
@@ -53,15 +43,31 @@ app.use(methodOverride('_method'))
 
 // ---------------------------------------------------------------------------------------
 
-// Session
-app.use(session({
-    secret: process.env.APP_TOKEN,
-    resave: true,
-    saveUninitialized: false,
-    store: new MongoStore({
-        mongooseConnection: mongoose.connection
+if (process.env.MONGO_DB) {
+
+    // Mongoose 
+    const MongoStore = require('connect-mongo')(session)
+
+    mongoose.connect(process.env.MONGO_DB)
+    mongoose.connection.on('open', () => {
+        console.log('A new connection has been pluged')
     })
-}))
+
+
+    if (process.env.APP_TOKEN) {
+ 
+        // Session
+        app.use(session({
+            secret: process.env.APP_TOKEN,
+            resave: true,
+            saveUninitialized: false,
+            store: new MongoStore({
+                mongooseConnection: mongoose.connection
+            })
+        }))
+    }
+
+}
 
 // ---------------------------------------------------------------------------------------
 
