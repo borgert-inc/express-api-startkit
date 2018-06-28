@@ -1,4 +1,12 @@
 
+<div align="center">
+	<img src="http://i.imgur.com/ogUP6GJ.png" alt="Borgert Boilerplate Node Express">
+    <p>
+        Borgert Boilerplate Node Express
+    </p>
+    <br>
+</div>
+
 
 # Boilerplate Node Express 
 
