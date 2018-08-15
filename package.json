@@ -1,13 +1,13 @@
 {
-  "name": "app-node-botziad",
-  "version": "1.0.0",
+  "name": "express-api-startkit",
+  "version": "2.0.0",
   "private": true,
   "engines": {
-    "node": ">=6.9.1"
+    "node": ">=8.11.3"
   },
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon -e js,twig ./bin/www",
+    "dev": "nodemon -e js ./bin/www",
     "eslint": "./node_modules/.bin/eslint ."
   },
   "husky": {
@@ -23,18 +23,13 @@
     "debug": "~2.6.9",
     "dotenv-extended": "^2.0.2",
     "express": "~4.16.0",
-    "express-flash": "0.0.2",
     "express-load": "^1.1.16",
-    "express-session": "^1.15.6",
-    "helmet": "^3.12.1",
     "http-errors": "~1.6.2",
     "method-override": "^2.3.10",
     "moment": "^2.22.1",
     "mongoose": "^5.0.15",
     "mongoose-paginate": "^5.0.3",
     "mongoose-validator": "^2.0.2",
-    "stylus": "0.54.5",
-    "twig": "~0.10.3",
     "winston": "^3.0.0-rc5"
   },
   "devDependencies": {

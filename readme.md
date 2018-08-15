@@ -1,8 +1,8 @@
 
 <div align="center">
-	<img src="http://i.imgur.com/ogUP6GJ.png" alt="Borgert Boilerplate Node Express">
+	<img src="http://i.imgur.com/ogUP6GJ.png" alt="Express API StartKit">
     <p>
-        Borgert Boilerplate Node Express
+        Express API StartKit
     </p>
     <br>
 </div>
@@ -39,15 +39,11 @@
 | :------------------------- | :---------------------------------------------------------- | 
 | bcryptjs                  | Encrypt password  |
 | body-parser               | Parser body express    |
-| connect-mongo             | Mongo connect for express-session    |
 | debug                     | For Debug    |
 | dotenv-extended           | To work files .env    |
 | eslint                    | Code standard    |
 | express                   | Framework express    |
-| express-flash             | Control flash messages    |
 | express-load              | For load modules    |
-| express-session           | To work with session    |
-| helmet                    | For safety     |
 | http-errors               | Controllers http errors     |
 | husky                     | Work pre commits     |
 | method-override           | Overrise methods in express     |
@@ -55,11 +51,5 @@
 | mongoose                  | ODM for database MongoDB    |
 | mongoose-paginate         | Paginate for mongoose    |
 | mongoose-validator        | Validator inputs for mongoose    |
-| stylus                    | Styleshet     |
-| twig                      | Engine for views    |
 | winston                   | Logs generator    |
 
-## Support on Beerpay
-Hey dude! Help me out for a couple of :beers:!
-
-[![Beerpay](https://beerpay.io/odirleiborgert/borgert-express-boilerplate/badge.svg?style=beer-square)](https://beerpay.io/odirleiborgert/borgert-express-boilerplate)  [![Beerpay](https://beerpay.io/odirleiborgert/borgert-express-boilerplate/make-wish.svg?style=flat-square)](https://beerpay.io/odirleiborgert/borgert-express-boilerplate?focus=wish)

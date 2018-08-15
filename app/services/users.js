@@ -13,7 +13,7 @@ module.exports = (app) => {
                         return {
                             code: 200,
                             status: true,
-                            message: 'Usuário foi cadastrado com sucesso.',
+                            message: 'User has been successfully registered.',
                             data: user
                         }
                     })
@@ -31,7 +31,7 @@ module.exports = (app) => {
                 return {
                     code: 500,
                     status: false,
-                    message: e.message || 'Não foi possível cadastrar o usuário.',
+                    message: e.message || 'Could not register user.',
                     exception: e.message
                 }
         
@@ -44,7 +44,7 @@ module.exports = (app) => {
             try {
 
                 return await app.models.user.findById(id)
-                    .then(user => {
+                    .then(async user => {
         
                         if (data.name) {
                             user.name = data.name
@@ -66,12 +66,12 @@ module.exports = (app) => {
                             user.password = data.password
                         }
         
-                        user.save()
-                        
+                        await user.save()
+
                         return {
                             code: 200,
                             status: true,
-                            message: 'Usuário foi atualizado com sucesso.'
+                            message: 'User successfully updated.'
                         }
                     })
                     .catch(err => {
@@ -88,7 +88,7 @@ module.exports = (app) => {
                 return {
                     code: 500,
                     status: false,
-                    message: e.message  || 'Não foi possível atualizar o usuário.',
+                    message: e.message  || 'Unable to update user.',
                     exception: e.message
                 }
         
@@ -105,7 +105,7 @@ module.exports = (app) => {
                         return {
                             code: 200,
                             status: true,
-                            message: 'Usuário foi removido com sucesso.'
+                            message: 'User successfully removed.'
                         }
                     })
                     .catch(err => {
@@ -122,7 +122,7 @@ module.exports = (app) => {
                 return {
                     code: 500,
                     status: false,
-                    message: e.message || 'Não foi possível remover o usuário.',
+                    message: e.message || 'Unable to remove user.',
                     exception: e.message
                 }
         

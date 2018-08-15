@@ -11,30 +11,27 @@ module.exports = (app) => {
         { 
             name: {
                 type: String,
-                required: [true, 'O campo nome é obrigatório.'],
+                required: [true, 'Name is required.'],
                 trim: true
             },
             email: {
                 type: String,
-                required: [true, 'O campo e-mail é obrigatório.'],
+                required: [true, 'Email is required.'],
                 unique: true,
                 lowercase: true,
                 trim: true,
                 validate: [
                     validate({
                         validator: 'isEmail',
-                        message: 'O campo e-mail não é válido.'
+                        message: 'Email is not valid.'
                     })
                 ]
             },
             password: {
                 type: String,
-                required: [true, 'O campo senha é obrigatório.'],
+                required: [true, 'Password is required.'],
                 trim: true,
                 select: false
-            },
-            avatar: {
-                type: String
             },
             roles: {
                 type: Array,
@@ -47,7 +44,7 @@ module.exports = (app) => {
             status: {
                 type: Boolean,
                 default: true,
-                required: [true, 'O campo status é obrigatório.']
+                required: [true, 'Status is required.']
             }
         },
         {
@@ -75,7 +72,7 @@ module.exports = (app) => {
                 if (err) {
                     return callback(err)
                 } else if (!user) {
-                    let err = new Error('Usuário não foi encontrado.')
+                    let err = new Error('User not find.')
                     err.status = 401
                     return callback(err)
                 }
