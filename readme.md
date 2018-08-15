@@ -23,9 +23,7 @@
 #### Configure .env
 > MONGO_DB=mongodb://localhost:27017/mongo_db
 
-> APP_TOKEN=MyTokenForSession
-
-#### Development (With nodemon watch .js and .twig)
+#### Development (With nodemon watch .js)
 > npm run dev
 
 > http://localhost:3000
