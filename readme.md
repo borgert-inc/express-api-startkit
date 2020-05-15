@@ -43,11 +43,10 @@
 | express                   | Framework express    |
 | express-load              | For load modules    |
 | http-errors               | Controllers http errors     |
-| husky                     | Work pre commits     |
 | method-override           | Overrise methods in express     |
 | moment                    | To work with dates     |
 | mongoose                  | ODM for database MongoDB    |
-| mongoose-paginate         | Paginate for mongoose    |
+| mongoose-paginate-v2      | Paginate for mongoose    |
 | mongoose-validator        | Validator inputs for mongoose    |
 | winston                   | Logs generator    |
 
