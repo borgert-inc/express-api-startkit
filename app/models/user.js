@@ -3,7 +3,7 @@
 const mongoose = require('mongoose')
 const validate = require('mongoose-validator')
 const bcrypt = require('bcryptjs')
-const mongoosePaginate = require('mongoose-paginate')
+const mongoosePaginate = require('mongoose-paginate-v2')
 
 module.exports = (app) => {
 

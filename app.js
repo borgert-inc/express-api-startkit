@@ -31,9 +31,11 @@ app.use(methodOverride('_method'))
 
 if (process.env.MONGO_DB) {
 
-    mongoose.connect(process.env.MONGO_DB)
-    mongoose.connection.on('open', () => {
-        console.log('A new connection has been pluged')
+    mongoose.connect(process.env.MONGO_DB, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+        useCreateIndex: true
     })
 
 }
