@@ -3,20 +3,6 @@ module.exports = (app) => {
 
     // ------------------------------------------------------------------------
 
-    // Define logger 
-    const catchError = (e) => {
-
-        app.helpers.logger.log({
-            date: new Date(),
-            level: 'error',
-            message: e.message,
-            filename: __filename
-        })
-
-    }
-
-    // ------------------------------------------------------------------------
-
     return {
 
         /**
@@ -49,9 +35,6 @@ module.exports = (app) => {
 
             } catch (e) {
 
-                // Invoke logger
-                catchError(e)
-
                 // Return error message
                 res.status(500).json({
                     error: e.message
@@ -78,8 +61,6 @@ module.exports = (app) => {
 
             } catch (e) {
                 
-                catchError(e)
-
                 res.status(500).json({
                     error: e.message
                 })
@@ -102,8 +83,6 @@ module.exports = (app) => {
 
             } catch (e) {
                 
-                catchError(e)
-
                 res.status(500).json({
                     error: e.message
                 })
@@ -130,8 +109,6 @@ module.exports = (app) => {
 
             } catch (e) {
 
-                catchError(e)
-
                 res.status(500).json({
                     error: e.message
                 })
@@ -154,8 +131,6 @@ module.exports = (app) => {
 
             } catch (e) {
                 
-                catchError(e)
-
                 res.status(500).json({
                     error: e.message
                 })

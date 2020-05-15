@@ -10,4 +10,16 @@ const logger = winston.createLogger({
     ]
 })
 
-module.exports = logger
+module.exports = (app) => {
+    return logger
+}
+
+// Implement
+
+// app.helpers.logger.log({
+//     date: new Date(),
+//     level: 'error',
+//     message: 'xxxxxxxxxxxxx',
+//     filename: __filename
+// })
+
