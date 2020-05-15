@@ -8,10 +8,8 @@ require('dotenv-extended').load()
 
 // Packages
 const express = require('express')
-const load = require('express-load')
-const path = require('path')
+const consign = require('consign')
 const bodyParser = require('body-parser')
-const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 
 // ---------------------------------------------------------------------------------------
@@ -23,27 +21,24 @@ const app = express()
 
 // Middlewares
 app.use(bodyParser.json())
-app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
-app.use(methodOverride('_method'))
 
 // ---------------------------------------------------------------------------------------
 
 if (process.env.MONGO_DB) {
-
     mongoose.connect(process.env.MONGO_DB, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
         useCreateIndex: true
     })
-
 }
 
 // ---------------------------------------------------------------------------------------
 
-// Express load
-load('models', { cwd: 'app' })
+// Load packages with consign
+consign({ cwd: 'app' })
+    .include('models')
     .then('helpers')
     .then('controllers')
     .then('services')
