@@ -22,7 +22,7 @@ module.exports = (app) => {
                 trim: true,
                 validate: value => {
                     if (!validator.isEmail(value)) {
-                        throw new Error({error: 'Invalid Email address'})
+                        throw new Error('Invalid Email address')
                     }
                 }
             },
