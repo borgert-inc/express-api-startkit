@@ -1,7 +1,7 @@
 'use strict'
 
 const mongoose = require('mongoose')
-const validate = require('mongoose-validator')
+const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const mongoosePaginate = require('mongoose-paginate-v2')
 
@@ -20,12 +20,11 @@ module.exports = (app) => {
                 unique: true,
                 lowercase: true,
                 trim: true,
-                validate: [
-                    validate({
-                        validator: 'isEmail',
-                        message: 'Email is not valid.'
-                    })
-                ]
+                validate: value => {
+                    if (!validator.isEmail(value)) {
+                        throw new Error({error: 'Invalid Email address'})
+                    }
+                }
             },
             password: {
                 type: String,
