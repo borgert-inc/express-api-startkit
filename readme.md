@@ -41,7 +41,7 @@
 | dotenv-extended           | To work files .env    |
 | eslint                    | Code standard    |
 | express                   | Framework express    |
-| express-load              | For load modules    |
+| consign                   | For load modules    |
 | http-errors               | Controllers http errors     |
 | method-override           | Overrise methods in express     |
 | moment                    | To work with dates     |
