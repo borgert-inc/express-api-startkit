@@ -15,7 +15,7 @@ module.exports = (app) => {
                 
             } catch (e) {
                 
-                app.helpers.slack.sendMessage({ message: 'My message is here' })
+                app.helpers.slack.postMessage({ message: 'My message is here' })
 
                 res.status(500).json({
                     error: e.message

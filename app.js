@@ -25,8 +25,8 @@ app.use(express.urlencoded({ extended: true }))
 
 // ---------------------------------------------------------------------------------------
 
-if (process.env.MONGO_DB) {
-    mongoose.connect(process.env.MONGO_DB, {
+if (process.env.MONGO_STRING_CONNECTION) {
+    mongoose.connect(process.env.MONGO_STRING_CONNECTION, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
