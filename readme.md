@@ -31,6 +31,11 @@
 #### Eslint
 > npm run eslint
 
+#### Slack
+Get your legacy token 
+- https://api.slack.com/legacy/custom-integrations/legacy-tokens
+- https://api.slack.com/methods
+
 #### Packages
 
 | Package                   | Description                                                |
