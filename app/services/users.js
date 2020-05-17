@@ -1,4 +1,6 @@
 
+const bcrypt = require('bcryptjs')
+
 module.exports = (app) => {
 
     return {
@@ -43,36 +45,19 @@ module.exports = (app) => {
 
             try {
 
-                return await app.models.user.findById(id)
-                    .then(async user => {
-        
-                        if (data.name) {
-                            user.name = data.name
-                        }
-        
-                        if (data.email) {
-                            user.email = data.email
-                        }
-        
-                        if (data.roles) {
-                            user.roles = data.roles 
-                        }
-        
-                        if (data.status) {
-                            user.status = data.status
-                        }
-        
-                        if (data.password) {
-                            user.password = data.password
-                        }
-        
-                        await user.save()
+                if (data.password) {
+                    data.password = await bcrypt.hash(data.password, 10)
+                }
+
+                return await app.models.user.findByIdAndUpdate(id, data)
+                    .then(() => {
 
                         return {
                             code: 200,
                             status: true,
                             message: 'User successfully updated.'
                         }
+
                     })
                     .catch(err => {
         

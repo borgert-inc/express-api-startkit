@@ -58,24 +58,21 @@ module.exports = (app) => {
         }
     )
 
-    schema.plugin(mongoosePaginate)
-
-    schema.pre('save', function (next) {
-        let user = this
-        bcrypt.hash(user.password, 10, function (err, hash){
-            if (err) {
-                return next(err)
-            }
-            user.password = hash
-            next()
-        })
+    schema.pre('save', async function (next) {
+        const user = this
+        if (user.isModified('password')) {
+            user.password = await bcrypt.hash(user.password, 10)
+        }
+        next()
     })
 
     schema.methods.generateToken = async function() {
         const user = this
+
         const token = jwt.sign({_id: user._id}, process.env.JWT_KEY)
         user.tokens = user.tokens.concat({ token })
         await user.save()
+
         return token
     }
 
@@ -93,6 +90,8 @@ module.exports = (app) => {
 
         return user
     }
+
+    schema.plugin(mongoosePaginate)
 
     return mongoose.model('user', schema)
 
