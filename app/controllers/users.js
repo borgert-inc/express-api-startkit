@@ -1,24 +1,16 @@
 
 module.exports = (app) => {
 
-    // ------------------------------------------------------------------------
-
     return {
 
-        /**
-         * Get users with paginate
-         * route: /users
-         */
         index: async (req, res) => {
 
             try {
 
-                // Paginate
                 let limit = 10
                 let page = req.query.page || 0
                 let offset = page * limit
         
-                // Get users by model
                 let users = await app.models.user.paginate({}, {
                     offset,
                     limit
@@ -30,12 +22,10 @@ module.exports = (app) => {
                         throw new Error('Unable to load users.')
                     })
 
-                // return json
                 res.status(200).json({ users })
 
             } catch (e) {
 
-                // Return error message
                 res.status(500).json({
                     error: e.message
                 })
@@ -44,9 +34,6 @@ module.exports = (app) => {
 
         },
 
-        /**
-         * 
-         */
         store: async (req, res) => {
 
             try {
@@ -57,7 +44,7 @@ module.exports = (app) => {
                     throw new Error(response.message)
                 }
 
-                res.status(response.code).json(response)
+                res.status(200).json(response)
 
             } catch (e) {
                 
@@ -100,7 +87,7 @@ module.exports = (app) => {
                         return user
                     })
                     .catch(() => {
-                        throw new Error('Could not load user data.')
+                        throw new Error('Could not load user.')
                     })
 
                 res.status(200).json({

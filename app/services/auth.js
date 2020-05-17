@@ -11,7 +11,6 @@ module.exports = (app) => {
                     .create(data)
                     .then(user => {
                         return {
-                            code: 200,
                             status: true,
                             message: 'User has been successfully registered.',
                             data: user
@@ -29,7 +28,6 @@ module.exports = (app) => {
             } catch (e) {
         
                 return {
-                    code: 500,
                     status: false,
                     message: e.message || 'Could not register user.',
                     exception: e.message

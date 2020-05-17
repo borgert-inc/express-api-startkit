@@ -13,7 +13,6 @@ module.exports = (app) => {
                     .create(data)
                     .then(user => {
                         return {
-                            code: 200,
                             status: true,
                             message: 'User has been successfully registered.',
                             data: user
@@ -31,7 +30,6 @@ module.exports = (app) => {
             } catch (e) {
         
                 return {
-                    code: 500,
                     status: false,
                     message: e.message || 'Could not register user.',
                     exception: e.message
@@ -53,7 +51,6 @@ module.exports = (app) => {
                     .then(() => {
 
                         return {
-                            code: 200,
                             status: true,
                             message: 'User successfully updated.'
                         }
@@ -71,7 +68,6 @@ module.exports = (app) => {
             } catch (e) {
         
                 return {
-                    code: 500,
                     status: false,
                     message: e.message  || 'Unable to update user.',
                     exception: e.message
@@ -88,7 +84,6 @@ module.exports = (app) => {
                 return await app.models.user.findByIdAndRemove(id)
                     .then(() => {
                         return {
-                            code: 200,
                             status: true,
                             message: 'User successfully removed.'
                         }
@@ -105,7 +100,6 @@ module.exports = (app) => {
             } catch (e) {
         
                 return {
-                    code: 500,
                     status: false,
                     message: e.message || 'Unable to remove user.',
                     exception: e.message
