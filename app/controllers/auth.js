@@ -20,7 +20,6 @@ module.exports = (app) => {
                 const token = await user.generateToken()
                 
                 res.status(200).json({
-                    _id: user._id,
                     name: user.name,
                     email: user.email,
                     token
