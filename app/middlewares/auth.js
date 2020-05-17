@@ -1,12 +1,24 @@
 'use strict'
 
-module.exports = () => {
+const jwt = require('jsonwebtoken')
+
+module.exports = (app) => {
     return {
-        my_middleware: (req, res, next) => {
+        auth: async (req, res, next) => {
 
-            // your logic
-
-            next()
+            const token = req.header('Authorization').replace('Bearer ', '')
+            const data = jwt.verify(token, process.env.JWT_KEY)
+            try {
+                const user = await app.models.user.findOne({ _id: data._id, 'tokens.token': token })
+                if (!user) {
+                    throw new Error('No find user')
+                }
+                req.user = user
+                req.token = token
+                next()
+            } catch (error) {
+                res.status(401).send({ error: 'Not authorized to access this resource' })
+            }
         }
     }
 }

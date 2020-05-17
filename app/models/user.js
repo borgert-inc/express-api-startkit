@@ -3,6 +3,7 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 const mongoosePaginate = require('mongoose-paginate-v2')
 
 module.exports = (app) => {
@@ -40,6 +41,12 @@ module.exports = (app) => {
                 type: Array,
                 default: []
             },
+            tokens: [{
+                token: {
+                    type: String,
+                    required: true
+                }
+            }],
             status: {
                 type: Boolean,
                 default: true,
@@ -64,25 +71,27 @@ module.exports = (app) => {
         })
     })
 
-    schema.statics.authenticate = function (email, password, callback) {
-        app.models.user.findOne({ email: email })
-            .select('+password')
-            .exec(function (err, user) {
-                if (err) {
-                    return callback(err)
-                } else if (!user) {
-                    let err = new Error('User not find.')
-                    err.status = 401
-                    return callback(err)
-                }
-                bcrypt.compare(password, user.password, function (err, result) {
-                    if (result === true) {
-                        return callback(null, user)
-                    } else {
-                        return callback()
-                    }
-                })
-            })
+    schema.methods.generateToken = async function() {
+        const user = this
+        const token = jwt.sign({_id: user._id}, process.env.JWT_KEY)
+        user.tokens = user.tokens.concat({ token })
+        await user.save()
+        return token
+    }
+
+    schema.statics.authenticate = async  (email, password) => {
+
+        const user = await app.models.user.findOne({ email }).select('+password')
+        if (!user) {
+            throw new Error('Invalid email credentials')
+        }
+        
+        const isPasswordMatch = await bcrypt.compare(password, user.password)
+        if (!isPasswordMatch) {
+            throw new Error('Invalid password credentials')
+        }
+
+        return user
     }
 
     return mongoose.model('user', schema)
