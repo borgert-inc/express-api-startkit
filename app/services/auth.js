@@ -12,7 +12,7 @@ module.exports = (app) => {
                     .then(user => {
                         return {
                             status: true,
-                            message: 'User has been successfully registered.',
+                            message: 'User has been successfully logged.',
                             data: user
                         }
                     })
@@ -29,7 +29,7 @@ module.exports = (app) => {
         
                 return {
                     status: false,
-                    message: e.message || 'Could not register user.',
+                    message: e.message || 'Could not auth user.',
                     exception: e.message
                 }
         
