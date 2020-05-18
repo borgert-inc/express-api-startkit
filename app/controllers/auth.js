@@ -33,6 +33,27 @@ module.exports = (app) => {
 
             }
 
+        },
+
+        logout: async (req, res) => {
+
+            try {
+
+                req.user.tokens.splice(0, req.user.tokens.length)
+                await req.user.save()
+                
+                res.status(200).json({
+                    name: 'Logout of system'
+                })
+                
+            } catch (e) {
+                
+                res.status(500).json({
+                    error: e.message || 'Not logout of system'
+                })
+
+            }
+
         }
 
     }
