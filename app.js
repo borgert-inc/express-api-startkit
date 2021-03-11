@@ -9,7 +9,6 @@ require('dotenv-extended').load()
 // Packages
 const express = require('express')
 const consign = require('consign')
-const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
 // ---------------------------------------------------------------------------------------
@@ -20,8 +19,7 @@ const app = express()
 // ---------------------------------------------------------------------------------------
 
 // Middlewares
-app.use(bodyParser.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 // ---------------------------------------------------------------------------------------
 
