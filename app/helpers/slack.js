@@ -6,10 +6,10 @@ module.exports = (app) => {
 
             try {
 
-                if (!process.env.SLACK_TOKEN) return false
+                if (!process.env.SLACK_TOKEN && (obj.channel || process.env.SLACK_CHANNEL)) return false
 
                 obj.token = process.env.SLACK_TOKEN
-                obj.channel = channel || process.env.SLACK_CHANNEL
+                obj.channel = obj.channel || process.env.SLACK_CHANNEL
 
                 slack.chat.postMessage(obj)
 
