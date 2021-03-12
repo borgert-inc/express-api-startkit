@@ -11,7 +11,6 @@
 
 ---
 
-
 #### Nodemon
 > npm install -g nodemon
 
@@ -33,8 +32,8 @@
 > npm run eslint
 
 #### Slack
-- Get your legacy token https://api.slack.com/legacy/custom-integrations/legacy-tokens
-- Documentation and methods for slack https://api.slack.com/methods
+  - Get your legacy token https://api.slack.com/legacy/custom-integrations/legacy-tokens
+  - Documentation and methods for slack https://api.slack.com/methods
 
 #### Routes
 
@@ -76,4 +75,3 @@ Users
 | mongoose-paginate-v2      | Paginate for mongoose    |
 | mongoose-validator        | Validator inputs for mongoose    |
 | winston                   | Logs generator    |
-
