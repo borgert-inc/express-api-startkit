@@ -1,5 +1,5 @@
 
-<div align="center">
+<div style="text-align: center;">
 	<img src="http://i.imgur.com/ogUP6GJ.png" alt="Express API StartKit">
     <p>
         Express API StartKit
@@ -7,6 +7,7 @@
     <br>
 </div>
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a5bbca0e074745f4813552055c867b5d)](https://www.codacy.com/gh/borgert-inc/express-api-startkit/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=borgert-inc/express-api-startkit&amp;utm_campaign=Badge_Grade)
 
 ---
 
