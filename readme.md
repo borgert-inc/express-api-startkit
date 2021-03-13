@@ -37,25 +37,16 @@
 
 #### Routes
 
-Register
-> POST http://localhost:3000/register
-
-Login
-> POST http://localhost:3000/auth/login
-
-Logout
-> POST http://localhost:3000/auth/logout
-
-Users
-> GET http://localhost:3000/users
-
-> POST http://localhost:3000/users
-
-> PUT http://localhost:3000/users/:id
-
-> GET http://localhost:3000/users/:id
-
-> DELETE http://localhost:3000/users/:id
+| Module    | Action    | Method    | Endpoint |
+| :-----    | :------   | :-------  | :---------------------------------------------------------- | 
+| Register  | Create    | POST      | http://localhost:3000/register |
+| Login     | Login     | POST      | http://localhost:3000/auth/login |
+| Logout    | Logout    | POST      | http://localhost:3000/auth/logout |
+| Users     | All       | GET       | http://localhost:3000/users | 
+| Users     | Create    | POST      | http://localhost:3000/users |
+| Users     | Update    | PUT       | http://localhost:3000/users/:id |
+| Users     | Show      | GET       | http://localhost:3000/users/:id |
+| Users     | Delete    | DELETE    | http://localhost:3000/users/:id |
 
 #### Packages
 
