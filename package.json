@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "bcryptjs": "2.4.3",
-    "connect-mongo": "3.2.0",
+    "connect-mongo": "4.4.0",
     "consign": "^0.1.6",
     "debug": "2.6.9",
     "dotenv-extended": "2.0.2",

@@ -28,7 +28,9 @@ if (process.env.MONGO_STRING_CONNECTION) {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
-        useCreateIndex: true
+        useCreateIndex: true,
+        ssl: true,
+        sslValidate: false
     })
 }
 
