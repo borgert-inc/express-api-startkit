@@ -7,7 +7,7 @@ module.exports = (app) => {
 
             try {
 
-                app.helpers.slack.postMessage({ text: 'My message is here' })
+                //app.helpers.slack.postMessage({ text: 'My message is here' })
                 
                 res.status(200).json({
                     name: 'express-api-startkit',
