@@ -53,7 +53,6 @@
 | Package                   | Description                                                |
 | :------------------------- | :---------------------------------------------------------- | 
 | bcryptjs                  | Encrypt password  |
-| body-parser               | Parser body express    |
 | debug                     | For Debug    |
 | dotenv-extended           | To work files .env    |
 | eslint                    | Code standard    |
