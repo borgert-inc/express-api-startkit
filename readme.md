@@ -35,6 +35,9 @@
   - Get your legacy token https://api.slack.com/legacy/custom-integrations/legacy-tokens
   - Documentation and methods for slack https://api.slack.com/methods
 
+#### Insomnia
+Use Insomnia to test the API endpoints, use the insomnia.json file that already has all the necessary endpoints. [Download Insomnia](https://insomnia.rest/).
+
 #### Routes
 
 | Module    | Action    | Method    | Endpoint |
