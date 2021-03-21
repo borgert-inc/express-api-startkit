@@ -10,7 +10,6 @@ require('dotenv-extended').load()
 const express = require('express')
 const consign = require('consign')
 const mongoose = require('mongoose')
-const cors = require('cors')
 
 // ---------------------------------------------------------------------------------------
 
@@ -21,7 +20,6 @@ const app = express()
 
 // Middlewares
 app.use(express.json())
-app.user(cors())
 // ---------------------------------------------------------------------------------------
 
 if (process.env.MONGO_STRING_CONNECTION) {
