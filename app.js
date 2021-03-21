@@ -10,11 +10,15 @@ require('dotenv-extended').load()
 const express = require('express')
 const consign = require('consign')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 // ---------------------------------------------------------------------------------------
 
 // App Express
 const app = express()
+
+// Cors
+app.use(cors())
 
 // ---------------------------------------------------------------------------------------
 
