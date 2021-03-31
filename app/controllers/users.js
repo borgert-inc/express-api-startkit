@@ -10,8 +10,13 @@ module.exports = (app) => {
                 let limit = 10
                 let page = req.query.page || 0
                 let offset = page * limit
-        
-                let users = await app.models.user.paginate({}, {
+                let query = {}
+
+                if (req.query.search !== '') {
+                    query = { ...query, name: req.query.search }
+                }
+
+                let users = await app.models.user.paginate(query, {
                     offset,
                     limit
                 })
