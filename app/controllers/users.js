@@ -12,8 +12,9 @@ module.exports = (app) => {
                 let offset = page * limit
                 let query = {}
 
-                if (req.query.search !== '') {
+                if (req.query.search && req.query.search !== '') {
                     query = { ...query, name: req.query.search }
+                    console.log('entrou', query)
                 }
 
                 let users = await app.models.user.paginate(query, {
