@@ -14,7 +14,6 @@ module.exports = (app) => {
 
                 if (req.query.search && req.query.search !== '') {
                     query = { ...query, name: req.query.search }
-                    console.log('entrou', query)
                 }
 
                 let users = await app.models.user.paginate(query, {
