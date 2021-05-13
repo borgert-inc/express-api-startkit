@@ -38,6 +38,9 @@
 #### Insomnia
 Use Insomnia to test the API endpoints, use the insomnia.json file that already has all the necessary endpoints. [Download Insomnia](https://insomnia.rest/).
 
+#### Node Best Practices
+> https://github.com/goldbergyoni/nodebestpractices
+
 #### Routes
 
 | Module    | Action    | Method    | Endpoint |
